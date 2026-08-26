@@ -1,0 +1,260 @@
+##DOCUMENTACIÓN FINAL — MOTOR 1F
+#Sistema de Gestión de Cosechas
+
+1. Objetivo del motor 1F
+El motor 1F controla automáticamente los ciclos de cosecha considerando:
+
+fecha actual;
+ciclo asignado;
+período operativo;
+estado del ciclo;
+progreso.
+
+Su característica principal es separar:
+Fechas visuales y Estado actual.
+
+
+2. Principio principal del motor
+El motor funciona bajo esta regla:
+
+FECHAS VISUALES
+        ↓
+Último período EN CURSO del ciclo
+
+ESTADO
+        ↓
+Depende de la fase actual:
+        EN_CURSO
+        FINALIZADA
+        PROXIMA
+
+
+Esto significa:
+
+Mientras un ciclo está EN CURSO:
+muestra sus fechas actuales.
+Cuando pasa a FINALIZADA:
+conserva las fechas del último EN CURSO.
+Cuando pasa a PRÓXIMA:
+conserva las fechas del último EN CURSO.
+Cuando comienza un nuevo EN CURSO:
+actualiza las fechas.
+
+
+3. Estructura del motor
+El flujo de funcionamiento es:
+
+app.js
+
+    ↓
+
+obtenerEstado1F()
+
+    ↓
+
+obtenerPeriodoCiclo1F()
+
+    ↓
+
+REGLAS_1F
+
+    ↓
+
+Resultado:
+
+FECHA_INICIO
+FECHA_FIN
+ESTADO
+PROGRESO
+
+
+4. Reglas definitivas 1F
+
+CICLO 1
+Estado	Período
+EN CURSO	16 → último día del mes actual
+FINALIZADA	01 → 10 del mes siguiente
+PRÓXIMA	11 → 15 del mes siguiente
+
+Ejemplo:
+16/09 → 30/09   EN CURSO
+01/10 → 10/10   FINALIZADA
+11/10 → 15/10   PRÓXIMA
+16/10 → 31/10   EN CURSO
+
+
+CICLO 6
+| Estado     | Período                          |
+| ---------- | -------------------------------- |
+| EN CURSO   | 22 mes actual → 05 mes siguiente |
+| FINALIZADA | 06 → 15 mes siguiente            |
+| PRÓXIMA    | 16 → 21 mes siguiente            |
+
+22/12 → 05/01   EN CURSO
+06/01 → 15/01   FINALIZADA
+16/01 → 21/01   PRÓXIMA
+22/01 → 05/02   EN CURSO
+
+
+CICLO 15
+| Estado     | Período                          |
+| ---------- | -------------------------------- |
+| EN CURSO   | 02 → 14 mes actual               |
+| FINALIZADA | 15 → 25 mes actual               |
+| PRÓXIMA    | 26 mes actual → 01 mes siguiente |
+
+02/01 → 14/01   EN CURSO
+15/01 → 25/01   FINALIZADA
+26/01 → 01/02   PRÓXIMA
+02/02 → 14/02   EN CURSO
+
+
+CICLO 21
+| Estado     | Período                          |
+| ---------- | -------------------------------- |
+| EN CURSO   | 07 → 20 mes actual               |
+| FINALIZADA | 21 mes actual → 01 mes siguiente |
+| PRÓXIMA    | 02 → 06 mes siguiente            |
+
+07/01 → 20/01   EN CURSO
+21/01 → 01/02   FINALIZADA
+02/02 → 06/02   PRÓXIMA
+07/02 → 20/02   EN CURSO
+
+
+5. Cálculo del estado
+La función principal:
+
+obtenerEstado1F()
+
+evalúa:
+EN_CURSO
+Cuando:
+
+fecha actual >= fecha inicio
+y
+fecha actual <= fecha fin
+
+Resultado:
+ESTADO = EN_CURSO
+
+FINALIZADA
+Cuando terminó el período EN CURSO y está dentro del rango posterior.
+Resultado:
+
+ESTADO = FINALIZADA
+
+PROXIMA
+Cuando está preparando el siguiente período.
+Resultado:
+
+ESTADO = PROXIMA
+
+
+6. Cálculo del progreso
+
+Reglas definitivas:
+EN_CURSO
+Cálculo proporcional:
+
+progreso =
+(días transcurridos / duración del ciclo) × 100
+
+Ejemplo:
+07/01 → 20/01
+16/01
+≈ 69%
+
+FINALIZADA
+Siempre:
+100%
+
+PROXIMA
+Siempre:
+0%
+
+7. Manejo de meses y años
+El motor soporta automáticamente:
+
+✅ Febrero 28 días
+✅ Febrero 29 días
+✅ Meses de 30 días
+✅ Meses de 31 días
+✅ Cruce diciembre → enero
+
+Ejemplo:
+22/12/2026 → 05/01/2027
+
+El motor genera correctamente:
+FECHA_INICIO:
+22/12/2026
+
+FECHA_FIN:
+05/01/2027
+
+8. Limpieza realizada
+Se eliminaron reglas antiguas:
+
+❌ Ciclo 15 en obtenerFechaFinEspecial()
+❌ Ciclo 21 en obtenerFechaFinEspecial()
+❌ Variable duplicada DURACIONES
+❌ Exportaciones duplicadas
+❌ Llamadas antiguas:
+
+obtenerPeriodoCiclo1F(ciclo, estado)
+
+Ahora existe una única lógica:
+
+obtenerPeriodoCiclo1F(ciclo, fechaActual)
+
+
+9. Validaciones realizadas
+Agosto 2026
+
+✅ 16/08/2026
+
+Septiembre 2026
+
+✅ 30/09/2026
+
+Octubre 2026
+
+✅ 01/10
+✅ 16/10
+✅ 21/10
+✅ 22/10
+✅ 31/10
+
+Cambio de año
+
+✅ 02/01/2027
+✅ 05/01/2027
+✅ 06/01/2027
+✅ 07/01/2027
+✅ 16/01/2027
+
+10. Estado final del motor
+MOTOR 1F
+
+✅ Reglas definitivas implementadas
+✅ Fechas dinámicas
+✅ Estados correctos
+✅ Progreso correcto
+✅ Cruces de mes funcionando
+✅ Cruce de año funcionando
+✅ Dashboard integrado
+✅ Filtros funcionando
+✅ Diseño visual terminado
+CHECKLIST FINAL DEL PROYECTO 1F
+✅ Motor 1F terminado
+✅ Código limpiado
+✅ Reglas documentadas
+✅ Pruebas aprobadas
+✅ Dashboard aprobado
+✅ Filtros aprobados
+✅ Colores aprobados
+✅ Fechas aprobadas
+✅ Estados aprobados
+✅ Progreso aprobado
+
+El motor 1F queda cerrado y aprobado.

@@ -1,0 +1,130 @@
+REPASANDO REGLAS 1F TOMANDO EN CUENTA SI HOY FUERA 2/08
+
+CICLO 1  TOMANDO EN CUENTA QUE MES DE AGOSTO
+
+FECHA VALIDA: DEL 16 AL 30 o 31 DEL MES ANTERIOR, ESTADO EN CURSO
+DE LA FECHA DEL 1 AL 10 DEL MES ACTUAL, ESTADO FINALIZADO
+Y DEL 11 AL 15 DEL MES ACTUAL, ESTADO PROXIMO (PREPARANDOSE PARA PONERSE 
+EN CURSO EL DIA 16 MES ACTUAL)
+
+******************
+
+CICLO 6
+FECHA VALIDA: DEL 22 DEL MES ANTERIOR AL 05 DEL MES ACTUAL, ESTADO EN CURSO
+DE LA FECHA DEL 06 AL 15 DEL MES ACTUAL, ESTADO FINALIZADO Y
+DEL 16 AL 21 DEL MES ACTUAL, ESTADO PROXIMO (PREPARANDOSE PARA PONERSE EN 
+CURSO EL DIA 22 MES ACTUAL)
+
+******************
+
+CICLO 15
+FECHA VALIDA: DEL 2 AL 14 DEL MES ACTUAL, ESTADO EN CURSO
+DE LA FECHA DEL 15 AL 25 DEL MES ACTUAL, ESTADO FINALIZADO Y
+DEL 26 AL 1 DEL MES SIGUIENTE, ESTADO PROXIMO (PREPARANDOSE PARA PONERSE EN 
+CURSO EL DIA 2 MES SIGUIENTE)
+
+
+******************
+
+CICLO 21
+FECHA VALIDA: DEL 7 AL 20 DEL MES ANTERIOR, ESTADO EN CURSO
+DE LA FECHA DEL 21 MES ANTERIOR AL 1 DEL MES ACTUAL, ESTADO FINALIZADO Y 
+DEL 2 AL 6 DEL MES ACTUAL, ESTADO PROXIMO (PREPARANDOSE PARA PONERSE EN  
+CURSO EL DIA 7)
+
+
+MA = MES ANTERIOR
+MC = MES CURSO
+MS = MES SIGUIENTE
+
+Reglas definitivas del 1F - SEGUN EL MES
+Ciclo	      EN CURSO	                           FINALIZADA                    PRÓXIMA
+1	16 → Último día del mes (MC)          01 → 10 (MS) 	             11 → 15 (MS)      
+ PREPARANDOSE A ENTRAR A 16 EN CURSO Y REPETIR EL CICLO  
+
+6	22 (MC) → 05 (MS)	                          06 → 15 (MS)	             16 → 21 (MS)       
+PREPARANDOSE A ENTRAR A 22 EN CURSO Y REPETIR EL CICLO  
+
+15	02 (MC) → 14 (MC)	                          15 → 25 (MC)	             26 (MC) → 01 (MS)
+.PREPARANDOSE A ENTRAR A 02 EN CURSO Y REPETIR EL CICLO  
+
+21	07 (MC) → 20 (MC)	                         21 (MC) → 01 (MS)        02 (MS) → 06 (MS)
+.PREPARANDOSE A ENTRAR A 07 EN CURSO Y REPETIR EL CICLO  
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Reglas definitivas del 2F - 3F - ETAPA5 - SEGUN EL MES
+
+/////
+Ciclo 1	      EN CURSO	2 (MC) → Último día del mes                                   
+	      FINALIZADA        1 (MS)    DE  00:00am A 15:00pm 	      
+                       PRÓXIMA              1 (MS)    DE  15:01pm A 23:59pm
+
+PREPARANDOSE A ENTRAR A DIA 2 EN CURSO Y REPETIR EL CICLO  
+////
+Ciclo 6	      EN CURSO	7 (MC) → 5 (MS)                                   
+	      FINALIZADA        6 (MS)    DE  00:00am A 15:00pm 	      
+                       PRÓXIMA              6 (MS)    DE  15:01pm A 23:59pm
+
+PREPARANDOSE A ENTRAR A DIA 7 EN CURSO Y REPETIR EL CICLO  
+////
+Ciclo 15	      EN CURSO	16 (MC) → 14 (MS)                                   
+	      FINALIZADA        15 (MS)    DE  00:00am A 15:00pm 	      
+                       PRÓXIMA              15 (MS)    DE  15:01pm A 23:59pm
+
+PREPARANDOSE A ENTRAR A DIA 16 EN CURSO Y REPETIR EL CICLO  
+////
+Ciclo 21	      EN CURSO	22 (MC) → 20 (MS)                                   
+	      FINALIZADA        21 (MS)    DE  00:00am A 15:00pm 	      
+                       PRÓXIMA              21 (MS)    DE  15:01pm A 23:59pm
+
+PREPARANDOSE A ENTRAR A DIA 22 EN CURSO Y REPETIR EL CICLO  
+
+
+
+
+
+
+
+
+
+
+
+
+# Guardar versión actual
+git add .
+git commit -m "Motor 1F final estable"
+
+# Crear punto de retorno
+git tag v1.0-FINAL
+
+# Subir todo
+git push
+git push origin v1.0-FINAL
+
+Para volver en cualquier momento   
+git checkout v1.0-FINAL
+
+Para borrar una rama local: 
+git branch -d nombre-rama
+
+Para volver a la rama gh-page, solo debes cambiar de rama con Git.      git switch gh-page
+Después verifica:                                                                                            git branch
+Crear una rama de desarrollo:                                                                       git checkout -b desarrollo
+
+
+gh-page
+ |
+ └── v1.0-FINAL ✅ estable
+
+
+desarrollo
+ |
+ └── nuevos cambios 🚧
+
+
