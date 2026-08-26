@@ -52,10 +52,10 @@ Sistema web funcional y validado para el control automático de los ciclos 1F, 2
 
 
 ## Vista previa:
-https://antonmarchitec.github.io/fashion__template/
+https://antonmarchitec.github.io/Sistema-de-Control-de-Ciclos-de-Cosechas/
 
 ## Frase del día:
 "Me levanto todas las mañanas sabiendo que será un gran día.".
 
 ## Imagen del proyecto
-hola
+<img width="851" height="402" alt="COSECHAS" src="https://github.com/user-attachments/assets/78bcf85f-3d2a-4087-81dd-f4f6fd93fb4a" />
