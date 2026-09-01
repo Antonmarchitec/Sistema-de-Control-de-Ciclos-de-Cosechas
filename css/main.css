@@ -10,13 +10,92 @@ RESET
     box-sizing:border-box;
 }
 
+/*=================================================
+VARIABLES DE TEMA
+=================================================*/
+
+:root{
+
+    --color-fondo:#f4f6f9;
+
+    --color-panel:#ffffff;
+
+    --color-texto:#333333;
+
+    --color-secundario:#555555;
+
+    --color-borde:#ddd;
+
+    --color-sombra:
+    rgba(0,0,0,.08);
+
+    --color-principal:#1f2937;
+
+    --color-blanco:#ffffff;
+
+    --color-input:#ffffff;
+
+    --color-input-text:#333333;
+
+    --color-card-borde:#e5e7eb;
+
+    --color-total:#081434;
+
+    --color-focus:#2563eb;
+
+    --color-fila:#f8fafc;
+
+    --color-hover:#eef5ff;
+}
+
+
+/*=================================================
+TEMA OSCURO
+=================================================*/
+
+body.dark{
+
+    --color-fondo:#111827;
+
+    --color-panel:#1f2937;
+
+    --color-texto:#f9fafb;
+
+    --color-secundario:#d1d5db;
+
+    --color-borde:#374151;
+
+    --color-sombra:
+    rgba(0,0,0,.35);
+
+    --color-principal:#0f172a;
+
+    --color-blanco:#ffffff;
+
+    --color-input:#374151;
+
+    --color-input-text:#f9fafb;
+
+    --color-total:#f97316;
+
+    --color-card-borde:#374151;
+
+    --color-focus:#60a5fa;
+
+    --color-fila:#162033;
+
+    --color-hover:#243244;
+}
+
+
+
 body{
 
     font-family:Arial, Helvetica, sans-serif;
 
-    background:#f4f6f9;
+    background:var(--color-fondo);
 
-    color:#333;
+    color:var(--color-texto);
 
 }
 
@@ -29,9 +108,9 @@ HEADER
 
 header{
 
-    background:#1f2937;
+    background:var(--color-principal);
 
-    color:#fff;
+    color:var(--color-blanco);
 
     padding:25px;
 
@@ -89,7 +168,7 @@ PANEL SUPERIOR
 
     flex-wrap:wrap;
 
-    background:#fff;
+    background:var(--color-panel);
 
     padding:20px;
 
@@ -97,7 +176,7 @@ PANEL SUPERIOR
 
     margin-bottom:25px;
 
-    box-shadow:0 3px 8px rgba(0,0,0,.08);
+    box-shadow:0 3px 8px var(--color-sombra);
 
 }
 
@@ -124,7 +203,11 @@ input{
 
     min-width:250px;
 
-    border:1px solid #ccc;
+    background:var(--color-input);
+
+    color:var(--color-input-text);
+
+    border:1px solid var(--color-borde);
 
     border-radius:6px;
 
@@ -135,11 +218,18 @@ input{
 select:focus,
 input:focus{
 
-    border-color:#2563eb;
+    border-color:var(--color-focus);
+
 
 }
 
+input::placeholder{
 
+    color:var(--color-input-text);
+
+    opacity:.6;
+
+}
 
 /*
 =================================================
@@ -161,15 +251,17 @@ DASHBOARD
 
 .card{
 
-    background:#fff;
+    background:var(--color-panel);
 
     border-radius:10px;
+
+    border:1px solid var(--color-card-borde);
 
     padding:20px;
 
     text-align:center;
 
-    box-shadow:0 2px 8px rgba(0,0,0,.08);
+    box-shadow:0 2px 8px var(--color-sombra);
 
 }
 
@@ -198,8 +290,7 @@ DASHBOARD
 }
 
 .card-total i{
-    color:#363636;
-;
+    color:var(--color-total);
 }
 
 .card-finalizadas i{
@@ -219,7 +310,7 @@ COLORES DEL DASHBOARD
 =========================================*/
 
 .card-total{
-    border-left:8px solid #363636;
+    border-left:8px solid var(--color-total);
 ;
 }
 
@@ -239,7 +330,7 @@ COLORES DEL DASHBOARD
 
     margin-bottom:15px;
 
-    color:#555;
+    color:var(--color-secundario);
 
 }
 
@@ -253,7 +344,7 @@ COLORES DEL DASHBOARD
 
 .card-total span{
 
-    color:#363636;
+    color:var(--color-total);
 
 }
 
@@ -283,7 +374,7 @@ INFORMACION
 
 #informacion{
 
-    background:#fff;
+    background:var(--color-panel);
 
     padding:15px;
 
@@ -299,7 +390,7 @@ INFORMACION
 
     gap:15px;
 
-    box-shadow:0 2px 8px rgba(0,0,0,.08);
+    box-shadow:0 2px 8px var(--color-sombra);
 
 }
 
@@ -319,7 +410,7 @@ TABLA
 
 #tablaContainer{
 
-    background:#fff;
+    background:var(--color-panel);
 
     border-radius:10px;
 
@@ -327,7 +418,7 @@ TABLA
 
     overflow:auto;
 
-    box-shadow:0 2px 8px rgba(0,0,0,.08);
+    box-shadow:0 2px 8px var(--color-sombra)
 
 }
 
@@ -343,13 +434,13 @@ TABLA
 
 .tabla th{
 
-    background:#1f2937;
+    background:var(--color-principal);
 
-    color:#fff;
+    color:var(--color-blanco);
 
     padding:14px;
 
-    border:1px solid #ddd;
+    border:1px solid var(--color-borde);
 
     text-align:center;
 
@@ -359,21 +450,23 @@ TABLA
 
     padding:12px;
 
-    border:1px solid #ddd;
+    border:1px solid var(--color-borde);
 
     text-align:center;
+
+    color:var(--color-texto);
 
 }
 
 .tabla tbody tr:nth-child(even){
 
-    background:#f8fafc;
+    background:var(--color-fila);
 
 }
 
 .tabla tbody tr:hover{
 
-    background:#eef5ff;
+    background:var(--color-hover);
 
 }
 
@@ -534,6 +627,13 @@ RESPONSIVE
         width:100%;
 
         min-width:100%;
+        background:var(--color-input);
+
+        color:var(--color-texto);
+
+        border:1px solid var(--color-borde);
+
+        
 
     }
 
