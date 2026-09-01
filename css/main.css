@@ -46,6 +46,8 @@ VARIABLES DE TEMA
     --color-fila:#f8fafc;
 
     --color-hover:#eef5ff;
+
+    --color-placeholder:#6b7280;
 }
 
 
@@ -85,6 +87,8 @@ body.dark{
     --color-fila:#162033;
 
     --color-hover:#243244;
+
+    --color-placeholder:#9ca3af;
 }
 
 
@@ -115,6 +119,8 @@ header{
     padding:25px;
 
     text-align:center;
+
+    position:relative;
 
 }
 
@@ -191,9 +197,8 @@ PANEL SUPERIOR
 }
 
 label{
-
     font-weight:bold;
-
+    color:var(--color-texto);
 }
 
 select,
@@ -225,7 +230,7 @@ input:focus{
 
 input::placeholder{
 
-    color:var(--color-input-text);
+    color:var(--color-placeholder);
 
     opacity:.6;
 
@@ -395,9 +400,8 @@ INFORMACION
 }
 
 .info{
-
     font-size:16px;
-
+    color:var(--color-texto);
 }
 
 
@@ -537,7 +541,7 @@ MENSAJE
 
     padding:40px;
 
-    color:#777;
+    color:var(--color-secundario);
 
 }
 
@@ -547,7 +551,7 @@ MENSAJE
 
     font-size:18px;
 
-    color:#999;
+    color:var(--color-secundario);
 
     padding:40px;
 
@@ -758,5 +762,46 @@ BARRA DE PROGRESO
     font-weight:bold;
 
     color:#111827;
+
+}
+
+
+
+/*=================================================
+BOTÓN MODO OSCURO
+=================================================*/
+
+.boton-tema{
+
+    position:absolute;
+
+    top:20px;
+
+    right:25px;
+
+    width:45px;
+
+    height:45px;
+
+    border-radius:50%;
+
+    border:none;
+
+    cursor:pointer;
+
+    font-size:22px;
+
+    background:#ffffff;
+
+    color:#111827;
+
+    transition:.3s;
+
+}
+
+
+.boton-tema:hover{
+
+    transform:scale(1.1);
 
 }
