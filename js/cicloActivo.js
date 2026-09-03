@@ -24,23 +24,25 @@ function activarControlCicloActivo(){
 
                if(this.checked){
 
-                checks.forEach(otro => {
+                    checks.forEach(otro => {
 
 
-                    if(otro !== this){
+                        if(otro !== this){
 
-                        otro.checked=false;
+                            otro.checked=false;
 
-                    }
-
-
-                });
+                        }
 
 
-                mostrarCicloActivo(this);
+                    });
 
 
-}
+                    mostrarCicloActivo(this);
+                    guardarCicloActivo(this);
+
+
+
+                }
 
 
             }
@@ -90,3 +92,5 @@ function mostrarCicloActivo(check){
 
 
 }
+
+
