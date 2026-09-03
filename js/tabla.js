@@ -57,6 +57,14 @@ function mostrarTabla(datos) {
 
     });
 
+
+    //=====================================================
+    // COLUMNA VISUAL PARA CICLO ACTIVO
+    //=====================================================
+
+    html += `<th>ACTIVO</th>`;
+
+
     html += `
 
             </tr>
@@ -153,12 +161,35 @@ function mostrarTabla(datos) {
             }
 
             html += `<td>${valor ?? ""}</td>`;
+            
 
         });
 
-        html += "</tr>";
+         //=====================================================
+        // CHECK CICLO ACTIVO
+        //=====================================================
 
-    });
+        html += `
+
+                <td class="celda-activo">
+
+                    <input
+
+                        type="checkbox"
+
+                        class="check-activo"
+
+                        data-ciclo="${fila.CICLO}"
+
+                    >
+
+                </td>
+
+            `;
+
+            html += "</tr>";
+
+        });
 
 
     html += `
@@ -171,6 +202,7 @@ function mostrarTabla(datos) {
 
 
     tablaContainer.innerHTML = html;
+    activarControlCicloActivo();
     animarBarras();
 
     // Reiniciar animación
