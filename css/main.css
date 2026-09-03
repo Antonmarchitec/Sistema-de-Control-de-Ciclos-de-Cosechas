@@ -833,3 +833,17 @@ td:last-child{
 
 }
 
+
+.footer{
+
+    text-align:center;
+
+    padding:15px;
+
+    margin-top:30px;
+
+    font-size:14px;
+
+    color:var(--color-secundario);
+
+}
