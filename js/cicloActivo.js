@@ -22,31 +22,25 @@ function activarControlCicloActivo(){
             function(){
 
 
-                if(this.checked){
+               if(this.checked){
+
+                checks.forEach(otro => {
 
 
-                    // Desmarcar todos los demás
+                    if(otro !== this){
 
-                    checks.forEach(otro => {
+                        otro.checked=false;
 
-
-                        if(otro !== this){
-
-                            otro.checked = false;
-
-                        }
+                    }
 
 
-                    });
+                });
 
 
-                    console.log(
-                        "Ciclo activo:",
-                        this.dataset.ciclo
-                    );
+                mostrarCicloActivo(this);
 
 
-                }
+}
 
 
             }
@@ -54,6 +48,45 @@ function activarControlCicloActivo(){
 
 
     });
+
+
+}
+
+
+
+//=========================================================
+// MOSTRAR CICLO ACTIVO
+//=========================================================
+
+function mostrarCicloActivo(check){
+
+
+    const elemento =
+    document.querySelector("#cicloActivo");
+
+
+    if(!elemento){
+
+        return;
+
+    }
+
+
+    const discador =
+    document.querySelector("#ciclo")
+    .value;
+
+
+
+    if(check.checked){
+        elemento.textContent =
+        `CICLO ${check.dataset.ciclo}`;
+    }
+
+    else{
+        elemento.textContent =
+        "Ciclo activo: --";
+    }
 
 
 }
