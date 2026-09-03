@@ -533,10 +533,10 @@ function actualizarSistema() {
 
 
 // Actualiza cada minuto
-// setInterval(
-//     actualizarSistema,
-//     60000
-// );
+setInterval(
+    actualizarSistema,
+    3600000
+);
 
 
 
