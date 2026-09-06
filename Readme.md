@@ -1,4 +1,3 @@
-<img width="916" height="440" alt="CAPTURA OSCURO" src="https://github.com/user-attachments/assets/1b7fc287-8c63-47ed-9a82-8f9e1be9bb3b" />
 # Sistema de Gestión y Control de Ciclos de Cosechas
 
 ## Tecnologías utilizadas para el desarrollo:
