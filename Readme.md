@@ -59,7 +59,6 @@ https://antonmarchitec.github.io/Sistema-de-Control-de-Ciclos-de-Cosechas/
 
 ## Imagen del proyecto
 <img width="851" height="402" alt="COSECHAS" src="https://github.com/user-attachments/assets/78bcf85f-3d2a-4087-81dd-f4f6fd93fb4a" />
-<img width="916" height="440" alt="CAPTURA OSCURO" src="https://github.com/user-attachments/assets/d67fd615-fedb-414a-b2e4-06710933fe96" />
-<img width="450" height="1622" alt="iPhone-13-PRO-sistemadecosechas digitizingcode com (1)" src="https://github.com/user-attachments/assets/8a8f9326-1b0f-4678-b587-ba25282fad7b" />
+
 
 
