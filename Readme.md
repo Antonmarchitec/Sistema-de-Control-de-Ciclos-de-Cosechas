@@ -58,3 +58,22 @@ https://antonmarchitec.github.io/Sistema-de-Control-de-Ciclos-de-Cosechas/
 "Me levanto todas las mañanas sabiendo que será un gran día.".
 
 ## Imagen del proyecto
+
+## 📸 Capturas del sistema
+### 💻 Versión escritorio
+
+<p align="center">
+  <img width="850" alt="Modo claro" src="https://github.com/user-attachments/assets/104dc55a-c582-4c50-b895-3c76454d32a9">
+</p>
+
+<p align="center">
+  <img width="850" alt="Modo oscuro" src="https://github.com/user-attachments/assets/d16f99a0-07e6-459d-a0ff-c0e76e00dc45">
+</p>
+
+
+### 📱 Versión móvil
+
+<p align="center">
+  <img width="350" alt="Versión móvil" src="https://github.com/user-attachments/assets/6b4eb55a-6a28-47d0-95b3-f1a9df8183cd">
+</p>
+
