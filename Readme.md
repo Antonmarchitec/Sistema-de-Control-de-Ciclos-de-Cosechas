@@ -58,5 +58,7 @@ https://antonmarchitec.github.io/Sistema-de-Control-de-Ciclos-de-Cosechas/
 "Me levanto todas las mañanas sabiendo que será un gran día.".
 
 ## Imagen del proyecto
-<img width="851" height="402" alt="COSECHAS" src="https://github.com/user-attachments/assets/78bcf85f-3d2a-4087-81dd-f4f6fd93fb4a" />
 
+<img width="916" height="440" alt="modo_oscuro" src="https://github.com/user-attachments/assets/51b47a39-859b-4e5d-abf6-e36ca6d45294" />
+<img width="851" height="402" alt="modo_claro" src="https://github.com/user-attachments/assets/d04ba001-c4c7-4f2c-af52-c2bd6ea39fbd" />
+<img width="450" height="1622" alt="movil" src="https://github.com/user-attachments/assets/eb01776c-2c9a-47a4-942f-7fca01265e99" />
