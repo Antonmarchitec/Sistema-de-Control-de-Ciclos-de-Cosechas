@@ -53,12 +53,10 @@ Sistema web funcional y validado para el control automático de los ciclos 1F, 2
 
 ## Vista previa:
 https://antonmarchitec.github.io/Sistema-de-Control-de-Ciclos-de-Cosechas/
-<img width="916" height="440" alt="modo_oscuro" src="https://github.com/user-attachments/assets/14f686e8-8c7a-4463-89ac-21547c5b2658" />
-
 
 ## Frase del día:
 "Me levanto todas las mañanas sabiendo que será un gran día.".
 
 ## Imagen del proyecto
-<img width="851" height="402" alt="COSECHAS" src="https://github.com/user-attachments/assets/78bcf85f-3d2a-4087-81dd-f4f6fd93fb4a" />
+
 
