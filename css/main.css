@@ -951,3 +951,100 @@ BOTÓN MODO OSCURO
     max-width:35px;
     text-align:center;
 }
+
+
+
+
+
+/*=====================================================
+POPUP ACTIVIDAD
+=====================================================*/
+
+.popup-actividad{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:100%;
+
+    background:rgba(0,0,0,.65);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:9999;
+
+}
+
+
+
+.contenido-popup{
+
+    background:var(--color-panel);
+
+    color:var(--color-texto);
+
+    width:400px;
+
+    padding:40px;
+
+    border-radius:15px;
+
+    text-align:center;
+
+}
+
+
+
+.contenido-popup h1{
+
+    font-size:28px;
+
+    margin-bottom:15px;
+
+}
+
+
+.contenido-popup h2{
+
+    font-size:32px;
+
+    color:var(--color-total);
+
+}
+
+
+.actividad-popup{
+
+    font-size:30px;
+
+    font-weight:bold;
+
+    margin:20px 0;
+
+}
+
+
+.contenido-popup button{
+
+    padding:12px 35px;
+
+    border:none;
+
+    border-radius:8px;
+
+    background:#1e3a8a;
+
+    color:white;
+
+    cursor:pointer;
+
+}
