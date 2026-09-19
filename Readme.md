@@ -59,7 +59,7 @@ https://antonmarchitec.github.io/Sistema-de-Control-de-Ciclos-de-Cosechas/
 
 ## Imagen del proyecto
 
-## 📸 Capturas del sistema
+## 📸 Capturas del sistemas
 ### 💻 Versión escritorio
 
 <p align="center">
