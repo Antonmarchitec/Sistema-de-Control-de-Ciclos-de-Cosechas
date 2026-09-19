@@ -427,13 +427,10 @@ TABLA
 }
 
 .tabla{
-
     width:100%;
-
     min-width:1200px;
-
     border-collapse:collapse;
-
+    table-layout:fixed;
 }
 
 .tabla th{
@@ -447,7 +444,7 @@ TABLA
     border:1px solid var(--color-borde);
 
     text-align:center;
-
+    
 }
 
 .tabla td{
@@ -459,7 +456,7 @@ TABLA
     text-align:center;
 
     color:var(--color-texto);
-
+    
 }
 
 .tabla tbody tr:nth-child(even){
@@ -765,7 +762,115 @@ BARRA DE PROGRESO
 
 }
 
+/*=====================================================
+COLUMNAS ACTIVIDAD NC OE PV PP
+=====================================================*/
+/*=====================================================
+CHECKBOX ACTIVIDADES
+=====================================================*/
 
+/*=====================================================
+COLUMNAS ACTIVIDAD NC OE PV PP
+=====================================================*/
+
+.tabla th.actividad,
+.tabla td.actividad{
+
+    width:30px;
+
+    min-width:30px;
+
+    max-width:30px;
+
+    padding:0;
+
+    text-align:center;
+
+
+
+}
+
+
+.check-actividad{
+
+    width:13px;
+    height:13px;
+
+    cursor:pointer;
+
+
+
+}
+
+
+
+
+
+/*=====================================================
+ COLUMNAS COMPACTAS
+=====================================================*/
+.tabla th:nth-child(1),
+.tabla td:nth-child(1){
+    width:110px;
+    min-width:70px;
+}
+
+
+.tabla th:nth-child(2),
+.tabla td:nth-child(2){
+    width:110px;
+    min-width:70px;
+}
+
+
+.tabla th:nth-child(3),
+.tabla td:nth-child(3){
+    width:80px;
+    min-width:50px;
+
+}
+
+
+.tabla th:nth-child(4),
+.tabla td:nth-child(4){
+    width:180px;
+    min-width:90px;
+}
+
+
+.tabla th:nth-child(5),
+.tabla td:nth-child(5){
+    width:80px;
+    min-width:50px;
+}
+
+
+.tabla th:nth-child(6),
+.tabla td:nth-child(6){
+    width:160px;
+    min-width:50px;
+}
+
+
+.tabla th:nth-child(7),
+.tabla td:nth-child(7){
+    width:160px;
+    min-width:50px;
+}
+
+
+.tabla th:nth-child(8),
+.tabla td:nth-child(8){
+    width:140px;
+    min-width:50px;
+}
+
+
+.tabla th:nth-child(9),
+.tabla td:nth-child(9){
+    width:200px;
+    min-width:50px;
+}
 
 /*=================================================
 BOTÓN MODO OSCURO
@@ -807,31 +912,6 @@ BOTÓN MODO OSCURO
 }
 
 
-/* Columna ACTIVO */
-
-th:last-child,
-td:last-child{
-
-    width:70px;
-
-    text-align:center;
-
-}
-
-
-/* Checkbox */
-
-.check-activo{
-
-    width:22px;
-
-    height:22px;
-
-    cursor:pointer;
-
-    accent-color:#1e3a8a;
-
-}
 
 
 .footer{
@@ -846,4 +926,28 @@ td:last-child{
 
     color:var(--color-secundario);
 
+}
+
+
+
+
+/*=====================================================
+ CHECKBOX NC OE PV PP
+=====================================================*/
+
+.check-actividad{
+    min-width:0 !important;
+    width:14px;
+    height:14px;
+    padding:0;
+    margin:auto;
+    cursor:pointer;
+    accent-color:#1e3a8a;
+}
+
+.tabla td:has(.check-actividad){
+    width:35px;
+    min-width:35px;
+    max-width:35px;
+    text-align:center;
 }

@@ -51,18 +51,11 @@ function mostrarTabla(datos) {
         !columna.startsWith("__EMPTY")
     );
     
+
     columnas.forEach(columna => {
-
         html += `<th>${columna}</th>`;
-
     });
 
-
-    //=====================================================
-    // COLUMNA VISUAL PARA CICLO ACTIVO
-    //=====================================================
-
-    html += `<th>ACTIVO</th>`;
 
 
     html += `
@@ -77,119 +70,136 @@ function mostrarTabla(datos) {
 
 
     // Filas
-
-    datos.forEach(fila => {
-
-        html += "<tr>";
-
-        columnas.forEach(columna => {
-
-            let valor = fila[columna];
-            //=====================================================
-            // BARRA DE PROGRESO
-            //=====================================================
-
-            if (columna === "PROGRESO") {
-
-                const porcentaje = parseInt(valor);
-
-                const estado = String(fila.ESTADO || "")
-                    .trim()
-                    .toUpperCase()
-                    .replace(/\s+/g, "_");
-
-                let color = "#22c55e";
+//************************************************************* */
+    datos.forEach(fila => {      /*************************************************** */
+         html += "<tr>";
 
 
-                //=====================================================
-                // COLOR SEGÚN ESTADO
-                //=====================================================
+            columnas.forEach(columna => {
 
-                if (estado === "EN_CURSO") {
+                let valor = fila[columna];
 
-                    // VERDE
-                    color = "#22c55e";
 
-                }
-                else if (estado === "PROXIMA") {
+                if(
+                    columna === "NC" ||
+                    columna === "OE" ||
+                    columna === "PV" ||
+                    columna === "PP" 
+                ){
 
-                    // AMARILLO
-                    color = "#facc15";
+                    valor = `
 
-                }
-                else if (estado === "FINALIZADA") {
-
-                    // ROJO
-                    color = "#ef4444";
-
+                    <input
+                        type="checkbox"
+                        class="check-actividad"
+                        data-tipo="${columna}"
+                        data-discador="${fila.DISCADOR}"
+                        data-ciclo="${fila.CICLO}"
+                    >
+                    `;
                 }
 
 
-                valor = `
+                // BARRA PROGRESO
+
+                if(columna === "PROGRESO"){
+
+                    const porcentaje = parseInt(valor);
+
+                    const estado = String(fila.ESTADO || "")
+                        .trim()
+                        .toUpperCase()
+                        .replace(/\s+/g,"_");
+
+
+                    let color="#22c55e";
+
+
+                    if(estado==="EN_CURSO"){
+
+                        color="#22c55e";
+
+                    }
+
+                    else if(estado==="PROXIMA"){
+
+                        color="#facc15";
+
+                    }
+
+                    else if(estado==="FINALIZADA"){
+
+                        color="#ef4444";
+
+                    }
+
+
+                    valor=`
+
                     <div class="contenedor-progreso">
 
-                        <div
+                        <div 
                             class="barra-progreso"
                             data-width="${porcentaje}"
                             style="
-                                width:0%;
-                                background:${color};
+                            width:0%;
+                            background:${color};
                             ">
                         </div>
 
-                        <span>${porcentaje}%</span>
+                        <span>
+                            ${porcentaje}%
+                        </span>
 
                     </div>
-                `;
 
-            }
+                    `;
 
-            // Colorear la columna ESTADO
+                }
 
-            if (columna === "ESTADO") {
 
-                const clase = String(valor)
-                    .toLowerCase()
-                    .replace("_", "-");
 
-                valor = `
+                // ESTADOS
+
+                if(columna==="ESTADO"){
+
+                    const clase = String(valor)
+                        .toLowerCase()
+                        .replace("_","-");
+
+
+                    valor=`
+
                     <span class="estado ${clase}">
                         ${valor}
                     </span>
-                `;
 
-            }
+                    `;
 
-            html += `<td>${valor ?? ""}</td>`;
-            
+                }
 
-        });
 
-         //=====================================================
-        // CHECK CICLO ACTIVO
-        //=====================================================
+                html += `<td>${valor ?? ""}</td>`;
 
-        html += `
 
-                <td class="celda-activo">
+            });
 
-                    <input
 
-                        type="checkbox"
 
-                        class="check-activo"
+            //=====================================================
+            // CHECKBOX ACTIVIDADES
+            //=====================================================
 
-                        data-ciclo="${fila.CICLO}"
 
-                    >
-
-                </td>
+            html += `
 
             `;
+                    
 
-            html += "</tr>";
+        /************************************************ ********************************************/
+        html += "</tr>";
 
-        });
+    });
 
 
     html += `
@@ -202,7 +212,7 @@ function mostrarTabla(datos) {
 
 
     tablaContainer.innerHTML = html;
-    activarControlCicloActivo();
+    activarActividadCiclo();
     animarBarras();
 
     // Reiniciar animación
