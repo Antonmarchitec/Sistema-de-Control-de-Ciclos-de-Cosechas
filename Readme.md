@@ -104,4 +104,4 @@ Desarrollado por:
 **DigitizingCode**
 
 Proyecto creado como parte del proceso de aprendizaje, experimentación y desarrollo de soluciones digitales utilizando tecnologías web.
-© 2026 DigitizingCode
+## © 2026 DigitizingCode
